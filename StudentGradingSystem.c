@@ -12,7 +12,6 @@ typedef struct {
     float gpa;
 } Student;
 
-// Function prototypes
 void loadStudents(Student students[], int *count);
 void calculateGPA(Student students[], int count);
 void saveReport(Student students[], int count);
@@ -57,7 +56,6 @@ int main() {
     return 0;
 }
 
-// Load students from CSV file
 void loadStudents(Student students[], int *count) {
     FILE *fp = fopen("students.csv", "r");
     if (!fp) {
@@ -89,7 +87,6 @@ void loadStudents(Student students[], int *count) {
     printf("%d students loaded from CSV.\n", *count);
 }
 
-// Calculate GPA for each student
 void calculateGPA(Student students[], int count) {
     for (int i = 0; i < count; i++) {
         int total = 0;
@@ -100,7 +97,6 @@ void calculateGPA(Student students[], int count) {
     }
 }
 
-// Display student data
 void displayStudents(Student students[], int count) {
     printf("\nName\t\tMarks\t\tGPA\n");
     printf("------------------------------------------------\n");
@@ -112,7 +108,6 @@ void displayStudents(Student students[], int count) {
     }
 }
 
-// Save report to CSV
 void saveReport(Student students[], int count) {
     FILE *fp = fopen("report.csv", "w");
     if (!fp) {
@@ -133,3 +128,4 @@ void saveReport(Student students[], int count) {
     fclose(fp);
     printf("Report saved as report.csv\n");
 }
+
